@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Brands | VINVIK Industries</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet"/>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .hero-brands {
+      background: url('assets/images/brands-hero.jpg') center/cover no-repeat;
+      padding: 100px 20px;
+      color: white;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-brands::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+
+    .hero-brands h1, .hero-brands p {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-images {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 2;
+      margin-bottom: 30px;
+    }
+
+    .hero-images img {
+      max-width: 150px;
+      height: auto;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+    }
+
+    .hero-images-fullwidth {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 40px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-images-fullwidth img {
+      max-width: 200px;
+      height: auto;
+    }
+
+    @media (max-width: 768px) {
+      .hero-images-fullwidth {
+        flex-direction: column;
+        gap: 20px;
+        padding: 0;
+      }
+
+      .hero-images-fullwidth img {
+        max-width: 150px;
+      }
+    }
+
+
+
+    .content-section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .section-divider {
+      background: linear-gradient(to right, #005719, #00a65a);
+      height: 4px;
+      width: 80%;
+      margin: 60px auto;
+      border-radius: 2px;
+    }
+
+    .brands-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .brand-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      width: 260px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .brand-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .brand-card img {
+      max-width: 100px;
+      margin-bottom: 15px;
+    }
+
+    .brand-card h3 {
+      color: #005719;
+      margin-bottom: 10px;
+    }
+
+    .brand-card p {
+      font-size: 0.95rem;
+      color: #444;
+    }
+
+    @media (max-width: 768px) {
+      .brand-card {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <span>📧 mvinvik@gmail.com</span>
+    <span>📞 +94 11 229 9390</span>
+    <span class="phone-last">📞 +94 76 358 5178</span>
+    <span>
+      <a href="https://www.facebook.com/share/1C9RT3aJDB/?mibextid=wwXIfr" target="_blank" class="fb-link">
+        <img src="assets/icons/fb.png" alt="Facebook" class="fb-icon"/>
+      </a>
+    </span>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="assets/images/logobg.png" alt="VINVIK Logo" class="logo-img"/>
+      <h5 style="color: #005719;">Crafting Clean with Care</h5>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="why-us.html">Why Us</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="brands.html" class="active">Our Brands</a></li>
+      <li><a href="join-us.html">Join Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-brands">
+      <img src="assets/images/logocombinedbg.png" alt="BG Logo">
+    
+
+    <h1 data-aos="fade-down">Our Brands</h1>
+    <p data-aos="fade-up">Trusted names under VINVIK Industries driving hygiene, safety, and sustainability across Sri Lanka.</p>
+  </section>
+
+  <div class="section-divider"></div>
+
+<!-- Brands Showcase -->
+<section class="content-section" data-aos="fade-up">
+  <h2>Explore Our Signature Brands</h2>
+  <div class="brands-grid">
+
+    <!-- Vinvik Brand Card -->
+    <div class="brand-card vinvik" data-aos="zoom-in">
+      <h3>Vinvik</h3>
+      <p>High-quality home care and laundry, plus branded hotel toiletries for everyday and hospitality needs.</p>
+    </div>
+
+    <!-- Mirol Brand Card -->
+    <div class="brand-card mirol" data-aos="zoom-in" data-aos-delay="100">
+      <h3>Mirol</h3>
+      <p>Customized cleaning for offices, factories, and vehicles—heavy-duty products and services that deliver.</p>
+    </div>
+
+  </div>
+</section>
+
+
+
+    
+
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Partnership Statement -->
+  <section class="content-section" data-aos="fade-up">
+    <h2>Empowering Brands, Empowering Communities</h2>
+    <p>Each brand under the VINVIK umbrella is built with purpose — serving diverse sectors from households to healthcare with efficiency, ethics, and innovation.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 VINVIK. All rights reserved.</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init();</script>
+  <script src="script.js"></script>
+</body>
+</html>

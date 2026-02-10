@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Products | VINVIK</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+
+  
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!-- Typed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+</head>
+
+<body class="bg-white text-gray-900">
+
+<!-- Top Bar -->
+  <div class="top-bar">
+    <span>📧 mvinvik@gmail.com</span>
+    <span>📞 +94 11 229 9390</span>
+    <span class="phone-last">📞 +94 76 358 5178</span>
+    <span>
+    <a href="https://www.facebook.com/share/1C9RT3aJDB/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="fb-link" aria-label="Facebook">
+      <img src="assets/icons/fb.png" alt="Facebook" class="fb-icon" />
+    </a>
+  </span>
+    
+
+  </div>
+
+ 
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="assets/images/logobg.png" alt="VINVIK Logo" class="logo-img" />
+      <span><h5 style="color: #005719;">Crafting Clean with Care</h5></span>
+    </div>
+    
+    
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="why-us.html">Why Us</a></li>
+      <li><a href="products.html" class="active">Products</a></li>
+      <li><a href="brands.html">Our Brands</a></li>
+      <li><a href="join-us.html">Join Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+<script src="script.js" defer></script>
+
+
+    <!-- Hamburger Icon -->
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </nav>
+
+    <!-- Mobile Menu Button (only visible on small screens) -->
+    <div class="mobile-menu-button" id="mobile-menu-button">
+    ☰ Menu
+    </div>
+
+    <!-- Slide-up Mobile Menu -->
+    <div class="mobile-slide-menu" id="mobile-slide-menu">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="why-us.html">Why Us</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="brands.html">Our Brands</a></li>
+        <li><a href="join-us.html">Join Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+    </div>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Page Title with Background Image -->
+<section class="relative bg-cover bg-center bg-no-repeat py-24 text-white" style="background-image: url('assets/images/home-hero.png');">
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+  <!-- Content -->
+  <div class="relative max-w-7xl mx-auto px-4 text-center z-10">
+    <h1 class="text-4xl font-bold mb-4">Explore Our Product Categories</h1>
+    <p class="text-lg text-gray-100">Find exactly what you need across all industries and lifestyle segments</p>
+
+    
+      
+  </div>
+</section>
+
+
+  <!-- Categories Grid -->
+  <section class="max-w-7xl mx-auto px-4 py-16">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Category Card Template -->
+      <!-- Repeat this for 8 categories -->
+      <!-- 1. Domestic -->
+      <div class="relative group overflow-hidden rounded-2xl shadow hover:shadow-xl transition-shadow duration-300">
+        <img src="assets/images/domestic.jpg" alt="Domestic" class="w-full h-60 object-cover transition-transform duration-300 group-hover:scale-105" />
+        <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white text-center p-6">
+          <h2 class="text-xl font-bold mb-2">Domestic</h2>
+          <p class="text-sm mb-4">High-quality cleaning products and home cleaning services for everyday use.</p>
+          <a href="domestic.html" class="px-4 py-2 bg-white text-black font-semibold rounded hover:bg-gray-100 transition">Explore</a>
+        </div>
+      </div>
+
+      <!-- 2. Companies -->
+      <div class="relative group overflow-hidden rounded-2xl shadow hover:shadow-xl transition-shadow duration-300">
+        <img src="assets/images/companies.jpg" alt="Companies" class="w-full h-60 object-cover transition-transform duration-300 group-hover:scale-105" />
+        <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white text-center p-6">
+          <h2 class="text-xl font-bold mb-2">Companies</h2>
+          <p class="text-sm mb-4">Customized cleaning solutions and professional services for office and business spaces.</p>
+          <a href="companies.html" class="px-4 py-2 bg-white text-black font-semibold rounded hover:bg-gray-100 transition">Explore</a>
+        </div>
+      </div>
+
+      <!-- 3. Industrial -->
+      <div class="relative group overflow-hidden rounded-2xl shadow hover:shadow-xl transition-shadow duration-300">
+        <img src="assets/images/industrial.jpg" alt="Industrial" class="w-full h-60 object-cover transition-transform duration-300 group-hover:scale-105" />
+        <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white text-center p-6">
+          <h2 class="text-xl font-bold mb-2">Industrial</h2>
+          <p class="text-sm mb-4">Heavy-duty cleaning products and services for factories, warehouses, and large-scale facilities.</p>
+          <a href="industrial.html" class="px-4 py-2 bg-white text-black font-semibold rounded hover:bg-gray-100 transition">Explore</a>
+        </div>
+      </div>
+
+      <!-- 4. Autocare -->
+      <div class="relative group overflow-hidden rounded-2xl shadow hover:shadow-xl transition-shadow duration-300">
+        <img src="assets/images/autocare.jpg" alt="Autocare" class="w-full h-60 object-cover transition-transform duration-300 group-hover:scale-105" />
+        <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white text-center p-6">
+          <h2 class="text-xl font-bold mb-2">Autocare</h2>
+          <p class="text-sm mb-4">Specialized products and services for vehicle care – interior and exterior.</p>
+          <a href="autocare.html" class="px-4 py-2 bg-white text-black font-semibold rounded hover:bg-gray-100 transition">Explore</a>
+        </div>
+      </div>
+
+      <!-- 5. Laundry Care -->
+      <div class="relative group overflow-hidden rounded-2xl shadow hover:shadow-xl transition-shadow duration-300">
+        <img src="assets/images/laundry.png" alt="Laundry Care" class="w-full h-60 object-cover transition-transform duration-300 group-hover:scale-105" />
+        <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white text-center p-6">
+          <h2 class="text-xl font-bold mb-2">Laundry Care</h2>
+          <p class="text-sm mb-4">Effective laundry products and support services for households and commercial laundries.</p>
+          <a href="laundry.html" class="px-4 py-2 bg-white text-black font-semibold rounded hover:bg-gray-100 transition">Explore</a>
+        </div>
+      </div>
+
+      <!-- 6. Cleaning Services -->
+      <div class="relative group overflow-hidden rounded-2xl shadow hover:shadow-xl transition-shadow duration-300">
+        <img src="assets/images/cleaning-services.jpg" alt="Cleaning Services" class="w-full h-60 object-cover transition-transform duration-300 group-hover:scale-105" />
+        <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white text-center p-6">
+          <h2 class="text-xl font-bold mb-2">Cleaning Services</h2>
+          <p class="text-sm mb-4">Comprehensive cleaning services for homes, offices, hotels, and industrial spaces.</p>
+          <a href="cleaning.html" class="px-4 py-2 bg-white text-black font-semibold rounded hover:bg-gray-100 transition">Explore</a>
+        </div>
+      </div>
+
+      <!-- 7. Hotel Amenities -->
+      <div class="relative group overflow-hidden rounded-2xl shadow hover:shadow-xl transition-shadow duration-300">
+        <img src="assets/images/hotel-amenities.jpg" alt="Hotel Amenities" class="w-full h-60 object-cover transition-transform duration-300 group-hover:scale-105" />
+        <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white text-center p-6">
+          <h2 class="text-xl font-bold mb-2">Hotel Amenities</h2>
+          <p class="text-sm mb-4">Branded hotel toiletries and guest essentials, customized for hospitality needs.</p>
+          <a href="hotel-amenities.html" class="px-4 py-2 bg-white text-black font-semibold rounded hover:bg-gray-100 transition">Explore</a>
+        </div>
+      </div>
+
+      <!-- 8. Hotel Cleaning Products -->
+      <div class="relative group overflow-hidden rounded-2xl shadow hover:shadow-xl transition-shadow duration-300">
+        <img src="assets/images/hotel-cleaning.jpg" alt="Hotel Cleaning Products" class="w-full h-60 object-cover transition-transform duration-300 group-hover:scale-105" />
+        <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white text-center p-6">
+          <h2 class="text-xl font-bold mb-2">Hotel Cleaning Products</h2>
+          <p class="text-sm mb-4">Professional-grade cleaning products tailored for hotels and resorts.</p>
+          <a href="hotel-cleaning.html" class="px-4 py-2 bg-white text-black font-semibold rounded hover:bg-gray-100 transition">Explore</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 VINVIK Industries | mvinvik@gmail.com | +94 11 229 9390</p>
+  </footer>
+
+</body>
+</html>

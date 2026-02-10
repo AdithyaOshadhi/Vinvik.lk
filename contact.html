@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us | VINVIK</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!-- Typed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <span>📧 mvinvik@gmail.com</span>
+    <span>📞 +94 11 229 9390</span>
+    <span class="phone-last">📞 +94 76 358 5178</span>
+    <span>
+      <a href="https://www.facebook.com/share/1C9RT3aJDB/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="fb-link" aria-label="Facebook">
+        <img src="assets/icons/fb.png" alt="Facebook" class="fb-icon" />
+      </a>
+    </span>
+  </div>
+
+<!-- Navigation -->
+<nav class="navbar">
+  <div class="logo">
+    <img src="assets/images/logobg.png" alt="VINVIK Logo" class="logo-img" />
+    <span><h5 style="color: #005719;">Crafting Clean with Care</h5></span>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="why-us.html">Why Us</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="brands.html">Our Brands</a></li>
+    <li><a href="join-us.html">Join Us</a></li>
+    <li><a href="contact.html">Contact</a></li> <!-- Don't hardcode "active" here -->
+  </ul>
+</nav>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // get current file name (e.g., "contact.html" or default to "index.html")
+  let current = window.location.pathname.split('/').pop();
+  if (!current) current = 'index.html';
+
+  const links = document.querySelectorAll('.nav-links a');
+
+  // clear any leftover active classes
+  links.forEach(a => a.classList.remove('active'));
+
+  // compare by filename only (works with subfolders & absolute URLs)
+  links.forEach(a => {
+    const hrefFile = new URL(a.getAttribute('href'), window.location.origin)
+      .pathname.split('/').pop();
+    if ((hrefFile || 'index.html').toLowerCase() === current.toLowerCase()) {
+      a.classList.add('active');
+    }
+  });
+});
+</script>
+
+
+
+  
+<body class="contact-page">
+  <!-- Hero Section -->
+  <section class="hero tagline-hero">
+    <div class="hero-overlay">
+      <h1><span id="typed-text"></span></h1>
+    </div>
+  </section>
+</body>
+  <!-- Decorative Divider -->
+  <div class="divider-bottom">
+    <svg viewBox="0 0 1440 100"><path fill="#ffffff" d="M0,0 C720,100 720,100 1440,0 L1440,100 L0,100 Z"></path></svg>
+  </div>
+
+  <!-- Contact Intro -->
+  <section class="content-section" data-aos="fade-up">
+    <h2 class="section-title">Get in Touch</h2>
+    <div class="section-divider"></div>
+    <p>At VINVIK, your satisfaction and trust drive our commitment. Whether you have questions, feedback, or partnership inquiries, we are here to listen and respond promptly. Use the contact methods below or send us a message directly through the form.</p>
+  </section>
+
+  <!-- Contact Info & Form -->
+  <section class="contact-wrapper" data-aos="fade-up">
+    <div class="contact-info">
+      <h3>Corporate Headquarters</h3>
+      <address>
+        VINVIK Marketing (PVT) Ltd<br>
+        No. 162/3, Borogadawatta<br>
+        Minuwangoda, Sri Lanka
+      </address>
+      <p><strong>Email:</strong> <a href="mailto:mvinvik@gmail.com">mvinvik@gmail.com</a></p>
+      <p><strong>Phone:</strong> <a href="tel:+94112299390">+94 11 229 9390</a> | <a href="tel:+94763585178">+94 76 358 5178</a></p>
+
+      <br>
+      <h3>Connect with Us</h3>
+      <p>Follow us on social media for updates and offers.</p>
+      <a href="https://www.facebook.com/share/1C9RT3aJDB/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+        <img src="assets/icons/fb.png" alt="Facebook" class="fb-icon" />
+      </a>
+    </div>
+
+    <div class="contact-form">
+      <h3>Send Us a Message</h3>
+      <form action="https://formspree.io/f/movwdrew" method="POST" novalidate>
+        <input type="text" name="_honey" style="display:none">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://da-rivindi.github.io/Vinvik_marketing/thank-you.html">
+
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Your full name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required />
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" placeholder="Subject line" required />
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <hr class="section-line" />
+
+  <!-- Map Section -->
+  <section class="map-section" data-aos="zoom-in-up">
+    <h3 class="section-title">Find Us on the Map</h3>
+    <div class="section-divider"></div>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63318.06819943451!2d79.8296743!3d6.9218381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25948c4e92903%3A0x9c89f2f6a469da2b!2sColombo!5e0!3m2!1sen!2slk!4v1700000000000"
+      width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
+    </iframe>
+  </section>
+
+
+  <hr />
+
+  <footer>
+    <p>&copy; 2025 VINVIK Industries | <a href="mailto:mvinvik@gmail.com">mvinvik@gmail.com</a> | <a href="tel:+94112299390">+94 11 229 9390</a></p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    new Typed('#typed-text', {
+      strings: ["Let’s Connect. Your Voice Matters."],
+      typeSpeed: 50,
+      backSpeed: 25,
+      loop: false
+    });
+  </script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init();</script>
+</body>
+</html>

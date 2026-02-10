@@ -1,0 +1,1369 @@
+/* Base */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+  font-family: 'Quicksand', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+  line-height: 1.6; 
+  background: #f4fbf7; 
+  color: #222; 
+  font-weight: 500; 
+  font-size:larger;
+}
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* Top Bar */
+.top-bar {
+  background: rgba(0,123,95);
+  color: white;
+  text-align: center;
+  
+  backdrop-filter: blur(6px); /* Frosted glass effect */
+  border-radius: 0 0 12px 12px;
+  padding: 0.5rem 2rem;
+  font-size: 0.95rem;
+  color: #ffffff;
+  position: relative;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 0;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: 0.3rem 2rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  /*margin: 0.5rem auto;*/
+  width: 100%;
+  max-width: 100%;
+  height: fit-content;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  margin-top: 0;
+}
+.logo {
+  font-weight: bold;
+  color: #007b5f;
+  font-size: 1.5rem;
+}
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+.nav-links a {
+  color: #005719;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.nav-links a:hover {
+  color: #880c0c;
+}
+
+.nav-links li a { /* Selects all 'a' tags within list items of the 'nav-links' class */
+    font-size: 20px; /* Example: Set font size to 16 pixels */
+  }
+
+
+
+/*Hamburger Menu*/
+.menu-toggle {
+  display: none; /* hidden by default; shown on small screens via media query */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  
+  margin-left: auto;
+}
+
+.menu-toggle span {
+  height: 3px;
+  width: 25px;
+  background-color: #005719;
+  display: block;
+  border-radius: 2px;
+  transition: 0.3s ease;
+}
+
+/* Hide nav links on small screens */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none !important;
+  }
+}
+
+/* Bottom menu button */
+.mobile-menu-button {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #005719;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-button {
+    display: block;
+  }
+}
+
+/* Slide-up menu */
+.mobile-slide-menu {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.15);
+  padding: 20px 0;
+  z-index: 999;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  animation: slideUp 0.3s ease-out;
+}
+
+.mobile-slide-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.mobile-slide-menu ul li {
+  margin: 10px 0;
+}
+
+.mobile-slide-menu ul li a {
+  color: #005719;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+
+
+/* === DEBUG: force the Why-Us hero background === */
+.hero.why-us-hero {
+  background-image: url('assets/images/why-us-hero.png') !important;
+  background-repeat: no-repeat !important;
+  background-position: center top !important;
+  background-size: cover !important;
+  height: 80vh !important;
+}
+
+/* 1) Force the hero to top-align its content */
+.hero.why-us-hero {
+  /* inherit display:flex from .hero */
+  align-items: flex-start !important;  /* push overlay to top */
+  justify-content: flex-start !important;
+  padding-top: 20rem !important;        /* nudge overlay down a bit */
+  width: min(100vw, 1800px); 
+}
+
+/* 2) (Optional) If you want pixel-perfect control, absolutely position the overlay */
+.why-us-hero .hero-overlay {
+  position: absolute;
+  top: -200px;      /* move this value up/down as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.why-us-solutions {
+  background-image: url('assets/images/solutions-bg.jpg');
+  background-repeat: no-repeat;
+  background-position: center top;    /* pin to the top so you see the start of the image */
+  background-size: contain;           /* scales the image so it all shows */
+  padding: 10rem 20rem;
+}
+
+
+.why-us-solutions::before {
+  content: "";
+  position: center;
+  inset: -500;
+  background: rgba(0, 0, 0, 0);
+}
+
+.why-us-solutions > * {
+  position: center;
+}
+
+/* Our Journey (Timeline) – growth background */
+.content-section.growth-bg {
+  position: relative;
+  background-image: url('assets/images/growth-bg.jpg'); /* change to .png if needed */
+  background-repeat: no-repeat;
+  background-position: center 30%;
+  background-size: cover;
+  color: #ffffff;              /* readable text */
+  padding: 4rem 2rem;
+  min-height: 50vh;         /* optional height */
+  overflow: hidden;
+}
+
+/* Darken the image for contrast, but keep it BEHIND content */
+.content-section.growth-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 0;               /* <- key: behind text */
+}
+
+/* Ensure all children sit above the overlay */
+.content-section.growth-bg > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Force readable colors on headings/body inside the section */
+.content-section.growth-bg h2,
+.content-section.growth-bg .timeline-item h4,
+.content-section.growth-bg .timeline-item p {
+  color: #20bd12fb;
+}
+
+
+/* Remove default browser gap so full-bleed hits the edges */
+body { margin: 0; }
+
+/* Full-bleed helper: stretch a section to viewport width */
+.full-bleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+/* Lighter section overlay so the photo shows more */
+.content-section.growth-bg::before{
+  background: rgba(0,0,0,0.22) !important;  /* was 0.45 */
+}
+
+/* Timeline “cards” — make them very transparent */
+.content-section.growth-bg .timeline-item{
+  background: rgba(255, 255, 255, 0.247) !important; /* lower = more transparent */
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  backdrop-filter: blur(2px);                   /* soft glass effect */
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+/* Ensure text stays readable on the lighter boxes */
+.content-section.growth-bg h2,
+.content-section.growth-bg .timeline-item h4,
+.content-section.growth-bg .timeline-item p{
+  color: #fff !important;
+  text-shadow: 0 2px 8px rgba(0,0,0,.35);
+}
+
+/* Value Props layout */
+.value-props h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #007b5f;
+}
+
+.vp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Card */
+.vp-card {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0,0,0,.12);
+  background: rgba(255,255,255,0.04); /* subtle glass if image fails */
+}
+
+/* Photo */
+.vp-photo {
+  width: 100%;
+  height: 180px;           /* tweak to 200–240 for taller photos */
+  object-fit: cover;
+  display: block;
+}
+
+/* Text panel over photo */
+.vp-body {
+  position: relative;
+  margin-top: -36px;       /* pull panel up over the image */
+  background: rgba(0,0,0,0.18);  /* <-- transparency: lower = more see-through */
+  backdrop-filter: blur(2px);
+  padding: 1rem 1.25rem 1.25rem;
+  color: #fff;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+/* Icon + title */
+.vp-icon {
+  width: 36px;
+  height: 36px;
+  color: #00d48f;          /* icon color (for SVG) */
+  margin-bottom: .5rem;
+}
+.vp-icon img { width: 36px; height: 36px; display: block; } /* if using PNGs */
+
+.vp-body h3 {
+  margin: 0 0 .35rem;
+  font-size: 1.1rem;
+}
+.vp-body p {
+  margin: 0;
+  color: #eaf6f2;
+  font-size: .98rem;
+}
+
+/* Hover polish */
+.vp-card:hover .vp-photo { transform: scale(1.03); transition: transform .35s ease; }
+.vp-card .vp-photo { transition: transform .35s ease; }
+
+
+/* Partner Logos Scrolling Strip */
+.logos-strip {
+  overflow: hidden; /* Hide the overflow to keep it inside the container */
+  margin-top: 30px;
+}
+
+.logos {
+  display: flex;
+  gap: 30px;
+  animation: scroll 30s linear infinite; /* Slower scroll speed */
+}
+
+.logos img {
+  object-fit: contain;
+  height: 120px;  /* Increased logo size */
+  filter: none !important;  /* Force the logos to display in color */
+  transition: transform 0.3s ease-in-out;  /* Optional: smooth transition on hover */
+}
+
+/* Animation to move the logos */
+@keyframes scroll {
+  0% {
+    transform: translateX(100%); /* Start from the right */
+  }
+  100% {
+    transform: translateX(-100%); /* End at the left */
+  }
+}
+
+/* Optional: Hover effect for logos */
+.logos img:hover {
+  transform: scale(1.1);  /* Slight zoom effect on hover */
+}
+
+
+
+
+/* Brands hero layout */
+.hero-brands {
+  position: relative;
+  min-height: 75vh;                /* height of the hero */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #fff;
+}
+
+/* Put the image behind the text and scale it down */
+.hero-brands > img {
+  position: absolute;
+  inset: 0;                        /* Fill the section, then we size via width */
+  width: min(100vw, 1000px);         /* Make the image bigger (adjust the numbers) */
+  height: auto;
+  margin: auto;                    /* Center it */
+  object-fit: contain;             /* Don’t crop the logo */
+  opacity: 0.9;                   /* Increased opacity for better clarity */
+  pointer-events: none;            /* Let clicks pass through */
+  z-index: 0;
+  transform: translateY(-10%);     /* Move the image up */
+}
+
+/* Ensure text stays above the image */
+.hero-brands h1,
+.hero-brands p {
+  position: relative;
+  z-index: 1;
+  transform: translateY(-30%);     /* Move the text up relative to the section */
+}
+
+/* Optional: Remove dark overlay behind text to make image clearer */
+.hero-brands::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgb(193, 255, 234);  /* Remove overlay for clearer image */
+  z-index: 0;
+}
+
+/* Tighter scaling on small screens */
+@media (max-width: 600px) {
+  .hero-brands > img {
+    width: 85vw;                   /* Larger image on smaller screens */
+    opacity: 0.95;                 /* Slightly clearer image */
+  }
+}
+
+
+/* Brands Showcase Grid */
+.brands-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));  /* Responsive grid */
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Brand Card Styling */
+.brand-card {
+  position: relative;
+  background-color: rgb(255, 255, 255);  /* Background of the card */
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgb(255, 251, 251);
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  overflow: hidden;
+  min-height: 300px;                /* Increased height for the card */
+}
+
+.brand-card h3 {
+  color: #006e21 !important; /* Ensure text color is applied */
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem; /* Adjusted the bottom margin to give better spacing */
+}
+
+/* Forcefully increase the font size of the paragraph in brand card */
+.brand-card p {
+  color: #fff7f7 !important;   /* Ensure text color is applied */
+  font-size: 1.3rem !important;  /* Increase font size to 2rem */
+  line-height: 1.6;
+  margin-bottom: 0 !important; /* Ensure no extra margin at the bottom */
+}
+
+
+
+/* Brand-specific background images */
+.brand-card.vinvik {
+  background-image: url('assets/images/vinvik-logo.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.brand-card.mirol {
+  background-image: url('assets/images/mirol-logo.png');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Hover effect for the cards */
+.brand-card:hover {
+  transform: translateY(-10px);  /* Less intense hover effect */
+}
+
+/* Optional: Remove dark overlay behind text to make image clearer */
+.brand-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); /* Darker overlay for readability */
+  z-index: 0;
+}
+
+.brand-card h3,
+.brand-card p {
+  position: relative;
+  z-index: 1;
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 600px) {
+  .brand-card {
+    padding: 1.5rem;
+  }
+}
+
+/* Content Section (Why Join Us?) with Background Image */
+.join-us-content {
+  padding: 3rem 2rem;
+  background: url('assets/images/hero-bottom.jpg') no-repeat center center/cover; /* Background image for the section */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* Small Overlay Box */
+.text-overlay-box {
+  background-color: rgba(0, 0, 0, 0.5);  /* Semi-transparent dark background for readability */
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 800px; /* Limit the width of the overlay box */
+  margin: 0 auto;  /* Center the box */
+  text-align: center;
+  color: #ffffff !important;  /* Force white text */
+  z-index: 1;  /* Make sure it’s above the background */
+}
+
+.text-overlay-box h2 {
+  font-size: 2rem;
+  color: #ffffff !important;  /* Force white color */
+  margin-bottom: 1.5rem;
+}
+
+.text-overlay-box p {
+  font-size: 1.1rem;
+  color: #ffffff !important;  /* Force white color */
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+
+/* Benefits Section */
+.join-benefits {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  z-index: 1;
+  position: relative;
+  margin-top: 2rem; /* Adjust to give space from the main text */
+}
+
+.benefit-box {
+  background: rgba(255, 255, 255, 0.8);  /* Light background for readability */
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 30%;
+  text-align: center;
+  z-index: 1;
+}
+
+.benefit-box h3 {
+  font-size: 1.4rem;
+  color: #007b5f;
+  margin-bottom: 1rem;
+}
+
+.benefit-box p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Form Section */
+.contact-container {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.contact-container h2 {
+  font-size: 1.8rem;
+  color: #007b5f;
+  margin-bottom: 1rem;
+}
+
+.contact-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-container input,
+.contact-container textarea {
+  padding: 1rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.contact-container button {
+  padding: 1rem;
+  border: none;
+  background-color: #007b5f;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-container button:hover {
+  background-color: #005d3d;
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+  .join-benefits {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .benefit-box {
+    width: 100%;
+  }
+
+  .contact-container {
+    padding: 1.5rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Sections */
+.content-section {
+  padding: 3rem 2rem;
+  max-width: 2000px;
+  margin: auto;
+}
+.content-section h2 {
+  margin-bottom: 1rem;
+  color: #007b5f;
+}
+.alt-bg {
+  background-color: #e0f7f1;
+}
+
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Product Cards */
+.product-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 123, 95, 0.1);
+  overflow: hidden;
+}
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.product-card .info {
+  padding: 1rem;
+}
+.product-card h3 {
+  color: #007b5f;
+  margin-bottom: 0.5rem;
+}
+.product-card p {
+  font-size: 0.95rem;
+}
+
+/* Contact Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+form input, form textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+form button {
+  background: #007b5f;
+  font-family: 'Quicksand', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+form button:hover {
+  background: #005f48;
+}
+
+/* Footer */
+footer {
+  background: #004d3c;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+
+/* Hero section on the Contact Us page only */
+.contact-page .tagline-hero {
+  height: 80vh;
+  background: url('assets/images/contact-us.jpg') no-repeat center center/cover;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* You can also add additional custom styles for other pages if needed */
+
+
+
+
+/* Hero section with background image and overlay */
+.tagline-hero {
+    height: 100vh;
+    background: url('assets/images/why-us-hero.png') no-repeat center center/cover;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
+
+  
+  .hero-overlay {
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hero-overlay h1 {
+    color: #fff;
+    font-size: 2.5rem;
+    padding: 2rem;
+    max-width: 800px;
+  }
+  
+  /* HR styling */
+  hr {
+    border: none;
+    height: 2px;
+    background-color: #ccc;
+    margin: 3rem 5%;
+  }
+  
+  /* Alternate background section */
+  .alt-bg {
+    background-color: #f0f8f5;
+  }
+  
+/* Compact, clean nav links */
+.nav-links {
+  display: flex;
+  gap: 14px;                 /* tighter spacing */
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-links a {
+  display: inline-block;
+  text-decoration: none;
+  color: #1f3b2e;            /* dark text (was white before) */
+  padding: 8px 12px;         /* smaller paddings */
+  border-radius: 6px;        /* subtle */
+  background: transparent;   /* no big green pill */
+  transition: color .2s ease, background .2s ease, border-color .2s ease;
+}
+
+.logo h5 {
+  font-size: 1.5rem; /* fixed font size */
+  color: #005719;
+}
+
+
+
+/* Hover: light tint only */
+.nav-links a:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+/* Active: underline/bottom bar + color, no green background */
+.nav-links a.active {
+  color: #007b5f;
+  background: transparent;
+  border-bottom: 3px solid #00d48f;
+}
+
+/* Mobile tweak */
+@media (max-width: 768px) {
+  .nav-links { gap: 10px; }
+  .nav-links a { padding: 8px 10px; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* Hero Section */
+.tagline-hero {
+    height: 60vh;
+    background: url('assets/images/about-hero.jpg') no-repeat center center/cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .hero-overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hero-overlay h1 {
+    color: #fff;
+    font-size: 2.5rem;
+    max-width: 900px;
+    padding: 1rem;
+  }
+  
+  /* Mission and Vision boxes */
+  .mission-vision-section {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem 5%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .box {
+    background-color: #f3f9f7;
+    padding: 1.5rem;
+    border-radius: 12px;
+    flex: 1 1 400px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .box:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* CEO Section */
+  .ceo-section {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  /* 1. Container: fixed size + hide overflow to crop */
+.ceo-image {
+  width: 280px;        /* same as your img width */
+  height: 350px;       /* adjust this to control how much of the torso shows */
+  overflow: hidden;    /* crops everything outside */
+  border-radius: 10px; /* keeps your rounded corners */
+  margin: 0 auto;      /* centers the container */
+}
+
+/* 2. Image: fill the container & focus on top-center */
+.ceo-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        /* scales the photo to fill, cropping as needed */
+  object-position: center top;  /* crops from bottom—keeping head & shoulders */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+  
+  .ceo-message {
+    flex: 1;
+  }
+  
+  /* AOS Transitions */
+  [data-aos] {
+    transition-duration: 1s;
+  }
+  
+  /* Policy Section with Background */
+.policy-section {
+    background: url('assets/images/policy-bg.jpg') no-repeat center center/cover;
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .overlay-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 3rem 2rem;
+    border-radius: 10px;
+  }
+  
+  .policy-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: space-between;
+  }
+  
+  .policy-text {
+    flex: 1 1 45%;
+    color: #fff;
+    padding: 1rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .policy-text h2 {
+    font-size: 1.8rem;
+    color: #00e0b5;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #00e0b5;
+    display: inline-block;
+  }
+  
+  .policy-text p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .policy-content {
+      flex-direction: column;
+    }
+  
+    .policy-text {
+      flex: 1 1 100%;
+    }
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #00b894; /* Your brand green or primary color */
+    gap: 0.75rem;
+  }
+  
+  .logo-img {
+    width: 160px;       /* Adjust size as needed */
+    height: 60px;
+    object-fit: contain;
+  }
+  
+
+  /* Decorative background underlay for Mission & Vision */
+  .mission-vision-section {
+    position: relative;
+    padding: 6rem 5%; /* Increased padding to avoid content overlapping bg edges */
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-height: 350px;
+    z-index: 1;
+    background: transparent; /* No background color */
+    overflow: visible; /* Allow bg to overflow */
+  }
+  
+  /* Extend background above and below the section */
+  .mission-vision-bg {
+    position: absolute;
+    top: -100px;       /* Shift upward to cover top part */
+    left: 0;
+    width: 100%;
+    height: calc(100% + 200px); /* Extend height to cover extra 100px on top and bottom */
+    background: url('assets/images/mission-vision-bg.png') no-repeat center center;
+    background-size: cover;
+    opacity: 0.35;
+    z-index: 0;
+    pointer-events: none;
+  }
+  
+  /* Adjust adjacent sections to prevent abrupt overlap */
+  .content-section,
+  .ceo-section {
+    position: relative;
+    z-index: 2;
+    margin-top: 100px;   /* Provide spacing so bg is visible behind */
+    margin-bottom: 100px;
+  }
+  
+ .fb-link {
+  display: inline-flex;
+  align-items: center; /* Vertically center the icon */
+  text-decoration: none;
+}
+
+.fb-icon {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 0; /* Remove margin-bottom to avoid upward shift */
+  /* Optional: Add small margin-left for spacing */
+  margin-left: 0.3rem;
+}
+  
+  .fb-link:hover .fb-icon {
+    filter: brightness(1.2);
+  }
+  
+  .phone-last {
+  margin-right: 2rem; /* Add extra space before FB icon */
+}
+
+
+/* Contact Section Enhancements */
+.contact-container {
+  max-width: 600px;
+  margin: 4rem auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.contact-container h2 {
+  color: #007b5f;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Form inside .contact-container will already inherit styles from global form */
+form input, form textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+form button {
+  background: #007b5f;
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+form button:hover {
+  background: #005f48;
+}
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .nav-links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .hero {
+    height: 50vh;
+  }
+  
+  .product-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  
+  .mission-vision-section {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .ceo-section {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.section-title {
+  text-align: center;
+  font-size: 32px;
+  color: #005719;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.section-divider {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #007d4a, #00b060);
+  margin: 0 auto 30px;
+  border-radius: 2px;
+}
+
+.section-line {
+  border: none;
+  height: 1px;
+  background: #ccc;
+  width: 90%;
+  margin: 60px auto;
+}
+
+.contact-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+}
+
+.contact-info, .contact-form {
+  flex: 1 1 350px;
+  max-width: 500px;
+}
+
+.contact-info {
+  padding-right: 20px;
+  border-right: 1px solid #ddd;
+}
+
+.contact-form {
+  padding-left: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: 'Quicksand', sans-serif;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: #005719;
+  outline: none;
+}
+
+.btn-submit {
+  background-color: #005719;
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 6px;
+  font-family: 'Quicksand', sans-serif;
+  transition: background 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: #008451;
+}
+
+@media screen and (max-width: 768px) {
+  .contact-wrapper {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+  .contact-info {
+    border-right: none;
+    padding-right: 0;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 30px;
+  }
+  .contact-form {
+    padding-left: 0;
+  }
+}
+
+
+/* ===================== */
+
+
+/* Thank You Section Styling */
+.thankyou-section {
+  background: linear-gradient(135deg, #e0f7f1 0%, #ffffff 100%);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.thankyou-container {
+  background: #fff;
+  padding: 3rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 123, 95, 0.1);
+  max-width: 600px;
+  width: 100%;
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+.thankyou-container h1 {
+  color: #007b5f;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.thankyou-container p {
+  font-size: 1.15rem;
+  color: #444;
+  margin-bottom: 2rem;
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: #007b5f;
+  color: #fff;
+  padding: 0.85rem 1.75rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #005f48;
+  transform: translateY(-2px);
+}
+
+/* Entrance animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===================== */
+/* Join Us Page Styling  */
+/* ===================== */
+
+.join-us-content h2 {
+  color: #007b5f;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.join-us-content p {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+  text-align: center;
+  line-height: 1.8;
+  color: #333;
+}
+
+.join-benefits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
+
+.benefit-box {
+  background: #f3f9f7;
+  border-radius: 12px;
+  padding: 2rem;
+  flex: 1 1 280px;
+  max-width: 340px;
+  box-shadow: 0 4px 14px rgba(0, 123, 95, 0.1);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.benefit-box:hover {
+  transform: translateY(-5px);
+}
+
+.benefit-box h3 {
+  color: #007b5f;
+  margin-bottom: 1rem;
+}
+
+.benefit-box p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .join-benefits {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .benefit-box {
+    max-width: 90%;
+  }
+}
