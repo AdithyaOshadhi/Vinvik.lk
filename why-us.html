@@ -172,7 +172,8 @@
       font-style: italic;
     }
 
-    /* SOLUTIONS SECTION */
+    
+/* SOLUTIONS SECTION */
 .solutions-section {
   position: relative;
   background: url('assets/images/why-solutions.jpg') center/cover no-repeat;
@@ -197,15 +198,13 @@
 
 .solutions-text h2 {
   font-size: 2.5rem;
-  margin-bottom: 20px;
   color: #00d48f;
+  margin-bottom: 20px;
 }
 
-.solutions-text p {
-  font-size: 1.2rem;
-  max-width: 800px;
-  margin: auto;
-  line-height: 1.8;
+.justify {
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .solutions-grid {
@@ -221,25 +220,24 @@
   padding: 30px;
   border-radius: 16px;
   max-width: 300px;
-  text-align: left;
   transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .solution-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
   background: rgba(255, 255, 255, 0.2);
 }
 
 .solution-card h3 {
   margin-bottom: 15px;
   font-size: 1.3rem;
-  color: #ffffff;
 }
 
 .solution-card p {
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1.7;
 }
+
 
   </style>
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
@@ -292,41 +290,41 @@
   <div class="section-divider"></div>
 
   <!-- Content-Section -->
-  <section class="solutions-section" data-aos="fade-up">
+  <section class="solutions-section">
   <div class="solutions-overlay">
     <div class="solutions-container">
 
-      <div class="solutions-text">
+      <div class="solutions-text" data-aos="fade-down">
         <h2>Complete Solutions Under One Roof</h2>
-        <p>
-          From homes to hotels and heavy industries, VINVIK delivers
-          customized cleaning solutions designed specifically for Sri Lankan environments.
+        <p class="justify">
+          From homes to hotels and heavy industries, VINVIK delivers customized cleaning
+          solutions designed specifically for Sri Lankan environments.
         </p>
       </div>
 
       <div class="solutions-grid">
 
-        <div class="solution-card">
-          <h3>🏨 Hotels</h3>
-          <p>
+        <div class="solution-card" data-aos="fade-up" data-aos-delay="0">
+          <h3>Hotels</h3>
+          <p class="justify">
             Guest toiletries, branded amenities, and deep-cleaning chemicals —
             everything your hospitality business needs under one supplier.
           </p>
         </div>
 
-        <div class="solution-card">
-          <h3>🏭 Industries</h3>
-          <p>
-            Heavy grease, oil marks, factory floors —
-            we develop high-strength formulations built for demanding sites.
+        <div class="solution-card" data-aos="fade-up" data-aos-delay="150">
+          <h3>Industries</h3>
+          <p class="justify">
+            Heavy grease, oil marks, and factory floors —
+            we develop high-strength formulations built for demanding industrial sites.
           </p>
         </div>
 
-        <div class="solution-card">
-          <h3>🏠 Homes & Offices</h3>
-          <p>
-            Affordable, effective daily-use products tailored
-            to maintain hygiene in Sri Lankan households and workplaces.
+        <div class="solution-card" data-aos="fade-up" data-aos-delay="300">
+          <h3>Homes & Offices</h3>
+          <p class="justify">
+            Affordable, effective daily-use products tailored to maintain hygiene
+            in Sri Lankan households and workplaces.
           </p>
         </div>
 
@@ -335,6 +333,7 @@
     </div>
   </div>
 </section>
+
 
 
   <div class="section-divider"></div>
@@ -475,7 +474,14 @@
 
 
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>AOS.init();</script>
+  <script>
+  AOS.init({
+    duration: 900,
+    easing: "ease-out",
+    once: true
+  });
+</script>
+
 
   <footer>
     <p>&copy; 2025 VINVIK. All rights reserved.</p>
