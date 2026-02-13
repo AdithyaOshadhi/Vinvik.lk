@@ -171,6 +171,76 @@
     .testimonial-card p {
       font-style: italic;
     }
+
+    /* SOLUTIONS SECTION */
+.solutions-section {
+  position: relative;
+  background: url('assets/images/why-solutions.jpg') center/cover no-repeat;
+  padding: 120px 20px;
+  color: white;
+}
+
+.solutions-overlay {
+  background: rgba(0, 0, 0, 0.65);
+  padding: 60px 20px;
+}
+
+.solutions-container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.solutions-text {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.solutions-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #00d48f;
+}
+
+.solutions-text p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: auto;
+  line-height: 1.8;
+}
+
+.solutions-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.solution-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  padding: 30px;
+  border-radius: 16px;
+  max-width: 300px;
+  text-align: left;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.solution-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.solution-card h3 {
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  color: #ffffff;
+}
+
+.solution-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
   </style>
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
@@ -222,13 +292,50 @@
   <div class="section-divider"></div>
 
   <!-- Content-Section -->
-  <section class="why-us-solutions" data-aos="fade-up">
-    <h2>✅ Complete Solutions Under One Roof</h2>
-    <p>Whether you're managing a home, a hotel, a company, or a large-scale industrial facility, we offer a full range of products and services to meet all your cleaning needs</p>
-    <li><strong>Hotels: </strong>From guest toiletries to deep cleaning chemicals, everything a hotel needs is here — including personalized branding for amenities.</li>
-    <li><strong>Industries: </strong>Need a formula for heavy grease, black oil marks, or high-traffic floor cleaning? We customize high-strength industrial products to tackle your exact challenges.</li>
-    <li><strong>Households & Companies: </strong>Affordable and effective cleaning for daily use, tailored to maintain hygiene in homes and office spaces.</li>
-  </section>
+  <section class="solutions-section" data-aos="fade-up">
+  <div class="solutions-overlay">
+    <div class="solutions-container">
+
+      <div class="solutions-text">
+        <h2>Complete Solutions Under One Roof</h2>
+        <p>
+          From homes to hotels and heavy industries, VINVIK delivers
+          customized cleaning solutions designed specifically for Sri Lankan environments.
+        </p>
+      </div>
+
+      <div class="solutions-grid">
+
+        <div class="solution-card">
+          <h3>🏨 Hotels</h3>
+          <p>
+            Guest toiletries, branded amenities, and deep-cleaning chemicals —
+            everything your hospitality business needs under one supplier.
+          </p>
+        </div>
+
+        <div class="solution-card">
+          <h3>🏭 Industries</h3>
+          <p>
+            Heavy grease, oil marks, factory floors —
+            we develop high-strength formulations built for demanding sites.
+          </p>
+        </div>
+
+        <div class="solution-card">
+          <h3>🏠 Homes & Offices</h3>
+          <p>
+            Affordable, effective daily-use products tailored
+            to maintain hygiene in Sri Lankan households and workplaces.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
   <div class="section-divider"></div>
 
