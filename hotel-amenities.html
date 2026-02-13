@@ -79,12 +79,39 @@
 
 
   <!-- Header Section -->
-  <section class="bg-gray-100 py-12">
-    <div class="max-w-4xl mx-auto text-center">
-      <h1 class="text-4xl font-bold mb-4">🏨 Hotel Amenities – Impress with Every Detail</h1>
-      <p class="text-gray-700">Custom-branded toiletries and wellness kits, designed to elevate your guests’ experience. We work with you to create the perfect amenity line that matches your hotel’s character.</p>
+<section
+  class="relative bg-cover bg-center overflow-hidden flex items-center"
+  style="background-image: url('assets/images/hotel-amenities-bg.jpg'); height: 420px;"
+>
+  <!-- Soft overlay ONLY for header -->
+  <div class="absolute inset-0 bg-white opacity-45"></div>
+
+  <!-- Content card -->
+  <div class="max-w-4xl mx-auto relative px-4 w-full">
+    <div class="bg-white/80 backdrop-blur-md rounded-2xl shadow-lg p-8 md:p-10 text-center border border-white/60">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+        Hotel Amenities – Impress with Every Detail
+      </h1>
+
+      <p class="text-gray-800 text-lg leading-relaxed">
+        Elevate your guests’ experience with premium hotel amenities and
+        custom-branded toiletries. From wellness kits to room essentials,
+        we help you create an amenity line that reflects your hotel’s
+        identity and hospitality standards.
+      </p>
+
+      <div class="mt-6 flex justify-center">
+        <a
+          href="products.html"
+          class="inline-block bg-green-700 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-800 transition duration-300"
+        >
+          View Other Products
+        </a>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- Product Cards -->
   <section class="max-w-6xl mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
