@@ -3,27 +3,22 @@
 
   <url>
     <loc>https://vinvik.lk/</loc>
-    <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://vinvik.lk/about.html</loc>
-    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://vinvik.lk/products.html</loc>
-    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://vinvik.lk/why-us.html</loc>
-    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://vinvik.lk/contact.html</loc>
-    <priority>0.7</priority>
   </url>
 
 </urlset>
