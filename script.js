@@ -33,22 +33,7 @@ if (productGrid) {
   });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const menuButton = document.getElementById('mobile-menu-button');
-  const slideMenu = document.getElementById('mobile-slide-menu');
 
-  menuButton?.addEventListener('click', () => {
-    const isVisible = slideMenu.style.display === 'block';
-    slideMenu.style.display = isVisible ? 'none' : 'block';
-  });
-
-  // Optional: Close menu if clicked outside
-  window.addEventListener('click', function (e) {
-    if (!slideMenu.contains(e.target) && !menuButton.contains(e.target)) {
-      slideMenu.style.display = 'none';
-    }
-  });
-});
 
 (function () {
   const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
@@ -87,48 +72,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-// Automatically set the active class on the current page's tab
-document.addEventListener("DOMContentLoaded", function() {
-  // Get the current URL path (relative path)
-  let currentPage = window.location.pathname.split("/").pop();  // Get the last part of the URL path (page name)
-
-  // Get all the navigation links
-  let links = document.querySelectorAll('.nav-links a');
-
-  // Loop through each link
-  links.forEach(link => {
-    // Compare the link's href (the page name) with the current page's name
-    if (link.getAttribute('href') === currentPage) {
-      // Add the 'active' class to the current link
-      link.classList.add('active');
-    }
-  });
-});
-
-
-
-document.addEventListener('DOMContentLoaded', () => {
-  // current path bits
-  const path = location.pathname.replace(/\/+$/, ''); // strip trailing slash
-  const file = (path.split('/').pop() || 'index.html').toLowerCase();
-  const fileNoExt = file.replace(/\.html?$/, '');
-
-  const links = Array.from(document.querySelectorAll('.nav-links a'));
-
-  // clear any previous active
-  links.forEach(a => a.classList.remove('active'));
-
-  // try exact filename match first
-  let matched = false;
-  links.forEach(a => {
-    const hrefFile = (new URL(a.getAttribute('href'), location.origin))
-      .pathname.split('/').pop().toLowerCase() || 'index.html';
-    if (hrefFile === file) {
-      a.classList.add('active');
-      matched = true;
-    }
-  });
-
   // fallback: match without .html (covers URLs like /about)
   if (!matched) {
     links.forEach(a => {
@@ -145,42 +88,32 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!matched && (file === '' || file === '/')) {
     const home = document.querySelector('.nav-links a[href$="index.html"]');
     if (home) home.classList.add('active');
-  }
-});
+}
 
 
+// ==============================
+// Mobile hamburger for .nav-links
+// ==============================
+function toggleMenu() {
+  const nav = document.getElementById("nav-links");
+  if (!nav) return;
+  nav.classList.toggle("open");
+}
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Get the current page (e.g., contact.html, products.html, etc.)
-  const path = location.pathname.replace(/\/+$/, ''); // Strip any trailing slashes
-  const file = (path.split('/').pop() || 'index.html').toLowerCase();
-  const fileNoExt = file.replace(/\.html?$/, '');
+document.addEventListener("DOMContentLoaded", () => {
+  const nav = document.getElementById("nav-links");
+  const toggle = document.getElementById("menu-toggle");
+  if (!nav || !toggle) return;
 
-  const links = Array.from(document.querySelectorAll('.nav-links a'));
-
-  // Remove any active class
-  links.forEach(a => a.classList.remove('active'));
-
-  // Try exact match
-  let matched = false;
-  links.forEach(a => {
-    const hrefFile = (new URL(a.getAttribute('href'), location.origin))
-      .pathname.split('/').pop().toLowerCase() || 'index.html';
-    if (hrefFile === file) {
-      a.classList.add('active');
-      matched = true;
-    }
+  // Close menu when a link is clicked (mobile)
+  nav.addEventListener("click", (e) => {
+    if (e.target.closest("a")) nav.classList.remove("open");
   });
 
-  // If no exact match, check base name (without extension)
-  if (!matched) {
-    links.forEach(a => {
-      const hrefBase = (new URL(a.getAttribute('href'), location.origin))
-        .pathname.split('/').pop().toLowerCase().replace(/\.html?$/, '');
-      if (hrefBase === fileNoExt) {
-        a.classList.add('active');
-        matched = true;
-      }
-    });
-  }
+  // Close menu when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+      nav.classList.remove("open");
+    }
+  });
 });

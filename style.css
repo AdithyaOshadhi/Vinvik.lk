@@ -95,12 +95,6 @@ ul { list-style: none; }
   transition: 0.3s ease;
 }
 
-/* Hide nav links on small screens */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none !important;
-  }
-}
 
 /* Bottom menu button */
 .mobile-menu-button {
@@ -1366,4 +1360,86 @@ input:focus, textarea:focus {
   .benefit-box {
     max-width: 90%;
   }
+}
+
+
+/* =========================
+   MOBILE NAV (Hamburger)
+   ========================= */
+
+@media (max-width: 768px) {
+  /* top bar wrap nicely */
+  .top-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding: 10px 12px;
+    text-align: center;
+  }
+
+  /* navbar becomes 2-row layout */
+  .navbar {
+    flex-wrap: wrap;
+    padding: 0.6rem 1rem;
+  }
+
+  /* show hamburger icon on mobile */
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* hide menu by default on mobile */
+  .nav-links {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px 0;
+  }
+
+  /* show menu when opened */
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li a {
+    font-size: 18px;
+    padding: 10px 12px;
+  }
+
+  .logo-img {
+    width: 140px;
+    height: auto;
+  }
+
+  .logo h5 {
+    font-size: 1rem;
+  }
+}
+
+/* =========================
+   MOBILE CONTENT FIXES
+   ========================= */
+@media (max-width: 768px) {
+  body { font-size: 16px; } /* your body is "larger" now - too big for phones */
+
+  .hero { padding: 80px 16px; }
+  .hero h1 { font-size: 2rem; }
+  .hero p { font-size: 1rem; }
+
+  .stats {
+    flex-direction: column;
+    gap: 18px;
+    padding: 30px 16px;
+  }
+  .stat h3 { font-size: 2.6rem; }
+  .stat p { font-size: 1.1rem; }
+
+  .content-section { padding: 2rem 1rem; }
+
+  .product-card { min-width: 240px; max-width: 260px; }
+  .product-img { height: 160px; }
+
+  footer { padding: 1rem; font-size: 0.95rem; }
 }
