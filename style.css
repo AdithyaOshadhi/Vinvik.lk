@@ -1522,3 +1522,57 @@ input:focus, textarea:focus {
     font-size: 0.95rem !important;
   }
 }
+
+/* FINAL MOBILE TOP BAR + HERO CENTER FIX */
+@media (max-width: 768px) {
+
+  /* Green bar in one line */
+  .top-bar {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 6px !important;
+    padding: 7px 4px !important;
+    font-size: 10.5px !important;
+    line-height: 1 !important;
+    overflow: hidden !important;
+  }
+
+  .top-bar span {
+    display: inline-flex !important;
+    align-items: center !important;
+    white-space: nowrap !important;
+  }
+
+  .fb-icon {
+    width: 20px !important;
+    height: 20px !important;
+    margin: 0 !important;
+  }
+
+  .phone-last {
+    margin-right: 0 !important;
+  }
+
+  /* Move welcome section back to center */
+  .hero {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 520px !important;
+    padding: 0 14px !important;
+  }
+
+  .hero-text {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  .hero-text h1 {
+    margin-top: 0 !important;
+  }
+}
