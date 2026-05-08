@@ -1576,3 +1576,54 @@ input:focus, textarea:focus {
     margin-top: 0 !important;
   }
 }
+
+/* LAST OVERRIDE - MOBILE TOP BAR + HOME HERO */
+@media screen and (max-width: 768px) {
+
+  body .top-bar {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 4px !important;
+    padding: 6px 3px !important;
+    font-size: 10px !important;
+    line-height: 1 !important;
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  body .top-bar span {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    white-space: nowrap !important;
+    margin: 0 !important;
+  }
+
+  body .phone-last {
+    margin-right: 0 !important;
+  }
+
+  body .fb-icon {
+    width: 18px !important;
+    height: 18px !important;
+    margin: 0 !important;
+  }
+
+  body .hero {
+    min-height: 560px !important;
+    height: 560px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 14px !important;
+  }
+
+  body .hero-text {
+    margin-top: 0 !important;
+    transform: translateY(20px) !important;
+    text-align: center !important;
+  }
+}
